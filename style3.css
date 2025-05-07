@@ -1,0 +1,219 @@
+/* Body and General Styles */
+body {
+  background-color: #fdf2e9;
+  color: #2d2d2d;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding-top: 80px; /* Space for absolute navbar */
+  overflow-x: hidden;
+  
+}
+
+h1, h2, h3 {
+  font-family: 'Rakkas', cursive;
+  font-weight: 400; /* Adjusted for better rendering */
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #f9e3d7; /* Soft peachy color */
+}
+
+/* Navbar */
+.navbar {
+  background-color: transparent;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px 6px;
+  position: fixed; /* Fixed navbar to stay at the top */
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center; /* Centers the content */
+  align-items: center;
+}
+
+/* Navbar Logo */
+.logo {
+  font-size: 42px;
+  font-weight: 600;
+  color: #D81B60;
+  font-family: 'Rakkas', cursive;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.nav-links li {
+  margin-left: 25px;
+}
+
+.nav-links a {
+  color: #333333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #FF6F61;
+}
+
+/* Main content */
+
+/* Main content */
+main {
+  flex: 1; /* Takes remaining space between navbar and footer */
+  padding: 150px 20px 20px; /* Adjusted for fixed navbar height */
+  display: flex;
+  flex-direction: column; /* Ensures content is laid out vertically */
+  justify-content: center; /* Centers the content vertically */
+  align-items: center; /* Centers the content horizontally */
+  text-align: justify; /* Justifies the text inside */
+  width: 100%; /* Ensures the section takes up the full width */
+  max-width: 1200px; /* Optional: To avoid stretching content too much */
+  margin: 0 auto; /* Centers the content block horizontally */
+}
+
+main > * {
+  width: 100%; /* Ensure child elements take up full width */
+  max-width: 100%; /* Prevents child elements from exceeding their container's width */
+}
+
+
+
+
+
+          
+/* Footer Section */
+.footer {
+  background: linear-gradient(90deg, #FFC107, #F4A261);
+  color: #333333;
+  padding: 30px 20px;
+  text-align: center;
+  position: relative;
+}
+
+/* Footer Container */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+/* Footer Section Style */
+.footer-section {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+/* Footer Heading */
+.footer-section h3 {
+  font-size: 24px;
+  color: #D81B60;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+/* Footer List Style */
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #333333;
+}
+
+/* Social Links in Footer */
+.social-links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #333333;
+  text-decoration: none;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.social-links a img {
+  width: 20px;
+  height: 20px;
+}
+
+.social-links a:hover {
+  color: #D81B60;
+}
+
+/* Quick Links */
+.footer-section .social-links ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-section .social-links ul li {
+  margin-bottom: 12px;
+}
+
+.footer-section .social-links ul li a {
+  font-weight: 500;
+  color: #333333;
+  transition: color 0.3s ease;
+}
+
+.footer-section .social-links ul li a.active,
+.footer-section .social-links ul li a:hover {
+  color: #D81B60;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  padding-top: 20px;
+}
+
+.footer p {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #333333;
+}
+
+/* Floating Flowers */
+.flower {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+  animation: float 6s infinite;
+}
+
+.flower:nth-child(1) { top: 10%; left: 5%; }
+.flower:nth-child(2) { top: 30%; right: 10%; }
+.flower:nth-child(3) { bottom: 20%; left: 15%; }
+
+@keyframes float {
+  0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 0.6;
+  }
+  50% {
+      transform: translateY(-30px) rotate(180deg);
+      opacity: 0.8;
+  }
+  100% {
+      transform: translateY(0) rotate(360deg);
+      opacity: 0.6;
+  }
+}

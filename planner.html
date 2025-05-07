@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinky Promise - Wedding Planner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Rakkas&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Pinky Promise</div>
+        <ul class="nav-links">
+            <li><a href="pinkypromise.html" class="active">Home</a></li>
+            <li><a href="planner.html">Planner</a></li>
+            <li><a href="management.html">Management</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+<div class="min-h-screen flex flex-col items-center py-12 bg-gray-100">
+    
+    <div class="w-full max-w-6xl px-4">
+    
+
+        <!-- Combined Timeline and Checklist Section -->
+        <div class="section combined-section mb-12">
+            <div class="flex flex-row gap-6">
+                <!-- Timeline Container -->
+                <div class="timeline-container w-1/2 min-h-full">
+                    <div class="glass-card p-8">
+                        <h2 class="text-3xl font-rakkas text-soft-coral mb-6">Add Timeline Task</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <input type="text" id="task-name" placeholder="Task (e.g., Book Venue)" class="p-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-soft-coral">
+                            <input type="date" id="task-date" class="p-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-soft-coral">
+                            <select id="task-status" class="p-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-soft-coral">
+                                <option value="Pending">Pending</option>
+                                <option value="Completed">Completed</option>
+                            </select>
+                            <input type="text" id="task-description" placeholder="Description (e.g., Confirm with vendor)" class="p-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-soft-coral sm:col-span-2">
+                            <button onclick="addTask()" class="bg-soft-coral text-white px-6 py-3 hover:bg-soft-coral-dark transition flex items-center justify-center gap-2 sm:col-span-2">
+                                <i class="fas fa-plus"></i> Add Task
+                            </button>
+                        </div>
+                        <p id="task-error" class="error mt-2">Please fill all fields with valid data.</p>
+                    </div>
+                    <div class="glass-card p-8 mt-6">
+                        <h2 class="text-3xl font-rakkas text-soft-coral mb-6">Wedding Timeline</h2>
+                        <table class="w-full text-left">
+                            <thead>
+                                <tr class="text-gray-700">
+                                    <th class="p-3">Task</th>
+                                    <th class="p-3">Due Date</th>
+                                    <th class="p-3">Status</th>
+                                    <th class="p-3">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="timeline-table"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Checklist Container -->
+                <div class="checklist-container w-1/2 min-h-full">
+                    <div class="glass-card p-8">
+                        <h2 class="text-3xl font-rakkas text-soft-coral mb-6">Add Checklist Item</h2>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <input type="text" id="checklist-item" placeholder="Item (e.g., Send Invitations)" class="flex-1 p-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-soft-coral">
+                            <button onclick="addChecklistItem()" class="bg-soft-coral text-white px-6 py-3 hover:bg-soft-coral-dark transition flex items-center justify-center gap-2">
+                                <i class="fas fa-plus"></i> Add Item
+                            </button>
+                        </div>
+                        <p id="checklist-error" class="error mt-2">Please enter a valid item.</p>
+                    </div>
+                    <div class="glass-card p-8 mt-6">
+                        <h2 class="text-3xl font-rakkas text-soft-coral mb-6">Wedding Checklist</h2>
+                        <ul id="checklist" class="space-y-3"></ul>
+                        <button onclick="deleteCompletedItems()" class="bg-soft-red text-white px-6 py-3 mt-6 hover:bg-soft-red-dark transition flex items-center justify-center gap-2">
+                            <i class="fas fa-trash"></i> Delete Completed
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                <!-- Budget Tracker Section -->
+                <div class="section budget-section mb-12">
+                    <div class="glass-card p-8">
+                        <h2 class="text-3xl font-rakkas text-soft-pink mb-6">Set Your Budget</h2>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <input type="number" id="total-budget" placeholder="Enter total budget (e.g., 2000000)" class="flex-1 p-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-soft-pink">
+                            <button onclick="setBudget()" class="bg-soft-pink text-white px-6 py-3 hover:bg-soft-pink-dark transition flex items-center justify-center gap-2">
+                                <i class="fas fa-wallet"></i> Set Budget
+                            </button>
+                        </div>
+                        <p id="budget-error" class="error mt-2" style="display:none; color: red;">Please enter a valid budget (greater than 0).</p>
+                    </div>
+                    <div class="glass-card p-8 mt-6">
+                        <h2 class="text-3xl font-rakkas text-soft-pink mb-6">Budget Overview</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                            <div class="budget-box bg-soft-blue">
+                                <span class="font-semibold">Total Budget:</span>
+                                <span id="budget-total">₹0</span>
+                            </div>
+                            <div class="budget-box bg-soft-pink">
+                                <span class="font-semibold">Spent:</span>
+                                <span id="budget-spent">₹0</span>
+                            </div>
+                            <div class="budget-box bg-soft-teal">
+                                <span class="font-semibold">Remaining:</span>
+                                <span id="budget-remaining">₹0</span>
+                            </div>
+                            <div class="budget-box bg-soft-yellow">
+                                <span class="font-semibold">Utilization:</span>
+                                <span id="budget-utilization">0%</span>
+                            </div>
+                        </div>
+                        <div class="w-full bg-gray-100 h-5">
+                            <div id="budget-progress" class="bg-soft-yellow h-5" style="width: 0%"></div>
+                        </div>
+                        <button onclick="exportExpenses()" class="bg-soft-teal text-white px-6 py-3 mt-6 hover:bg-soft-teal-dark transition flex items-center justify-center gap-2">
+                            <i class="fas fa-download"></i> Export Expenses (CSV)
+                        </button>
+                    </div>
+                    <div class="glass-card p-8 mt-6">
+                        <h2 class="text-3xl font-rakkas text-soft-pink mb-6">Add Expense</h2>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <input type="text" id="expense-category" placeholder="Category (e.g., Venue)" class="p-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-soft-pink">
+                            <input type="number" id="expense-cost" placeholder="Cost (e.g., 500000)" class="p-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-soft-pink">
+                            <input type="text" id="expense-description" placeholder="Description (e.g., Dream Venue)" class="p-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-soft-pink sm:col-span-2">
+                            <button onclick="addExpense()" class="bg-soft-pink text-white px-6 py-3 hover:bg-soft-pink-dark transition flex items-center justify-center gap-2 sm:col-span-2">
+                                <i class="fas fa-plus"></i> Add Expense
+                            </button>
+                        </div>
+                        <p id="expense-error" class="error mt-2" style="display:none; color: red;">Please fill all fields with valid data.</p>
+                    </div>
+                    <div class="glass-card p-8 mt-6">
+                        <h2 class="text-3xl font-rakkas text-soft-pink mb-6">Expense List</h2>
+                        <table class="w-full text-left">
+                            <thead>
+                                <tr class="text-gray-700">
+                                    <th class="p-3">Category</th>
+                                    <th class="p-3">Cost</th>
+                                    <th class="p-3">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="expense-table"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        
+            <script src="script.js"></script>
+        </body>
+        </html>
+        

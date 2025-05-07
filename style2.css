@@ -1,0 +1,710 @@
+/* Global Reset */
+* {
+  box-sizing: border-box; /* Ensure padding/margins don’t collapse gaps */
+}
+
+/* General Styles */
+html {
+  scroll-behavior: smooth;
+  background-color: #fdf2e9; /* Softer peachy tone */
+}
+
+body {
+  background-color: #fdf2e9;
+  color: #2d2d2d;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding-top: 80px; /* Space for absolute navbar */
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h5 {
+  font-family: 'Rakkas', cursive;
+  font-weight: 400;
+  color: #4a1c40;
+}
+
+/* Navbar */
+.navbar {
+  background-color: transparent;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px 6px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Navbar Logo */
+.logo {
+  font-size: 42px;
+  font-weight: 600;
+  color: #D81B60;
+  font-family: 'Rakkas', cursive;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.nav-links li {
+  margin-left: 25px;
+}
+
+.nav-links a {
+  color: #333333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a.active, .nav-links a:hover {
+  color: #FF6F61;
+}
+
+/* Button Scroll */
+.button-scroll {
+  padding: 20px 0;
+  background: #fdf2e9;
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  overflow-x: auto;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.button-center {
+  display: flex;
+  justify-content: center;
+}
+
+.button-row {
+  display: flex;
+  gap: 12px;
+  padding: 0 20px;
+}
+
+.vendor-btn {
+  background: linear-gradient(135deg, #ec4899, #c71585);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.vendor-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Vendor Sections */
+.vendor-section {
+  margin: 40px 20px;
+  text-align: center;
+  color: #4a1c40;
+  display: none;
+}
+
+.vendor-section.active {
+  display: block;
+}
+
+.vendor-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Base Card Styles */
+.card {
+  background: white; /* Fallback background */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 350px; /* Ensure consistent height */
+}
+
+.card-img-top {
+  width: 100%;
+  height: 150px; /* Standardized height for all layouts */
+  object-fit: cover; /* Ensures images fill space, cropping if needed */
+  transition: transform 0.4s ease;
+}
+
+.card-body {
+  padding: 15px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px; /* Ensures consistent height for content */
+  flex-grow: 1;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #2d2d2d;
+  position: relative;
+}
+
+.card-title::before, .card-title::after {
+  content: none; /* Prevent pseudo-element issues */
+}
+
+.card-text {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: #555;
+  flex-grow: 1; /* Allows text to take available space */
+}
+
+.card-price {
+  font-size: 1rem;
+  color: #c71585;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.list-group {
+  margin-bottom: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.list-group-item {
+  font-size: 0.85rem;
+  padding: 4px 0;
+  border: none;
+  background: transparent;
+  color: #555;
+}
+
+.card-link {
+  text-decoration: none;
+  color: #c71585; /* Fallback color */
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  border: 2px solid #c71585; /* Fallback border color */
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  align-self: flex-start; /* Ensures button stays at bottom */
+  margin-top: auto; /* Pushes button to bottom */
+}
+
+.card-link:hover {
+  background-color: #c71585; /* Fallback hover background */
+  color: white;
+}
+
+/* Layout-Specific Styles */
+/* 1. Twelve-Card Grid (Venues) - Soft Coral, Coral Button */
+.vendor-section .twelve-card-grid .card {
+  background: #ffc4bb; /* Soft Coral */
+  width: 100%;
+  max-width: 220px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.twelve-card-grid .card-link {
+  color: #FF6F61; /* Coral */
+  border-color: #FF6F61;
+}
+
+.twelve-card-grid .card-link:hover {
+  background-color: #FF6F61;
+  color: white;
+}
+
+.twelve-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.twelve-card-grid .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+/* Photography Section - Pale Pink Card, Dark Teal Button */
+.vendor-section .horizontal-scroll .card {
+  background: #ffe6eb; /* Softer Pale Pink */
+  flex: 0 0 260px;
+  scroll-snap-align: center;
+  box-sizing: border-box;
+  min-height: 350px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.horizontal-scroll .card:hover {
+  transform: translateY(-5px);
+}
+
+.horizontal-scroll .card-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: transparent;
+  color: #c77888; /* Darker rose for text & border */
+  border: 2px solid #c77888;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.horizontal-scroll .card-link:hover {
+  background-color: #c77888; /* Fill with same dark rose on hover */
+  color: white;
+}
+
+
+/* Horizontal scroll layout */
+.horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 15px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #c71585 #fdf2e9;
+}
+
+/* Webkit scrollbar styling */
+.horizontal-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-track {
+  background: #fdf2e9;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb {
+  background: #c71585;
+  border-radius: 5px;
+}
+
+.horizontal-scroll .card-img-top {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+
+/* 3. Line-by-Line Layout (Catering and Entertainment) */
+.line-by-line {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Consistent gap between cards */
+  padding: 15px;
+}
+
+.line-by-line .card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* Catering - Light Red-Pink, Lime Green Button */
+#cateringSection .line-by-line .card {
+  background: #d7ff88; /* Light Red-Pink */
+}
+
+#cateringSection .line-by-line .card-link {
+  color: #99cc33; /* Lime Green */
+  border-color: #99cc33;
+}
+
+#cateringSection .line-by-line .card-link:hover {
+  background-color: #99cc33;
+  color: white;
+}
+
+/* Entertainment - Pale Yellow, Yellow Button */
+#entertainmentSection .line-by-line .card {
+  background: #FFE082; /* Pale Yellow */
+}
+
+#entertainmentSection .line-by-line .card-link {
+  color: #FFCA28; /* Yellow */
+  border-color: #FFCA28;
+}
+
+#entertainmentSection .line-by-line .card-link:hover {
+  background-color: #FFCA28;
+  color: white;
+}
+
+.line-by-line .card-img-top {
+  width: 200px;
+  height: 150px; /* Match standard height */
+  object-fit: cover;
+  border-radius: 8px 0 0 8px;
+}
+
+.line-by-line .card-body {
+  flex: 1;
+  padding: 15px;
+  text-align: left;
+}
+
+.line-by-line .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+/* 4. Staggered Grid (Makeup) - Light Purple Background, Dark Purple Button */
+.vendor-section .staggered-grid .card {
+  background: #E6CCFF; /* Light Purple */
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.staggered-grid .card-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: transparent;
+  color: #A05DFF; /* Dark Purple */
+  border: 2px solid #A05DFF;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.staggered-grid .card-link:hover {
+  background-color: #A05DFF; /* Dark Purple on hover */
+  color: white;
+}
+
+.staggered-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.staggered-grid .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+
+/* 5. Tile Layout (Transport) - Pale Blue, Dark Red Button */
+.vendor-section .tile-layout .card {
+  background: #A3BFFA; /* Pale Blue */
+  border: 2px solid transparent;
+  text-align: center;
+  
+  box-sizing: border-box;
+}
+
+.tile-layout .card-link {
+  color: #7d9de2; /* Dark Red */
+  border-color:#7d9de2;
+}
+
+.tile-layout .card-link:hover {
+  background-color: #7d9de2;
+  color: white;
+}
+
+.tile-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tile-layout .card:hover {
+  border-color: #7d9de2;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+/* 6. Carousel Layout (Invitations) - Light Teal Background, Magenta Button */
+.vendor-section .carousel-track .card {
+  background: #99e4ee; /* Light Teal */
+  flex: 0 0 220px;
+  scroll-snap-align: center;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-track .card-link {
+  color: #008b99; /* Dark Teal */
+  border: 2px solid #008b99;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.carousel-track .card-link:hover {
+  background-color: #008b99; /* Fill with Dark Teal */
+  color: white;
+}
+
+
+.carousel-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 15px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-track .card-img-top {
+  height: 150px;
+  object-fit: cover;
+  width: 100%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.carousel-track .card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 12px;
+}
+
+.carousel-track .card-title {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.carousel-track .card-text {
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+}
+
+.carousel-track .card-price {
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  text-align: left;
+  width: 100%;
+}
+
+
+.carousel-track .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #3eabba;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+  z-index: 10;
+}
+
+.carousel-arrow:hover {
+  background: #60d2e1;
+}
+
+.carousel-prev {
+  left: 10px;
+}
+
+.carousel-next {
+  right: 10px;
+}
+
+
+/* Media Queries */
+@media (max-width: 1200px) {
+  .twelve-card-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .carousel-container {
+      max-width: 100%;
+  }
+
+  .carousel-track .card {
+      flex: 0 0 200px;
+  }
+
+  .line-by-line .card {
+      flex-direction: column;
+      align-items: stretch;
+  }
+
+  .line-by-line .card-img-top {
+      width: 100%;
+      height: 150px;
+      border-radius: 8px 8px 0 0;
+  }
+
+  .horizontal-scroll .card {
+      flex: 0 0 240px; /* Adjusted for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px;
+  }
+
+  .logo {
+      font-size: 36px;
+      margin-bottom: 10px;
+  }
+
+  .nav-links {
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 0;
+  }
+
+  .nav-links li {
+      margin-left: 0;
+  }
+
+  .button-row {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+  }
+
+  .vendor-btn {
+      padding: 10px 20px;
+      font-size: 13px;
+  }
+
+  .vendor-section {
+      margin: 30px 15px;
+  }
+
+  .vendor-section h2 {
+      font-size: 1.8rem;
+  }
+
+  .twelve-card-grid, .staggered-grid, .tile-layout {
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      padding: 10px;
+  }
+
+  .carousel-track .card {
+      flex: 0 0 200px;
+  }
+
+  .carousel-arrow {
+      width: 35px;
+      height: 35px;
+      font-size: 1rem;
+  }
+
+  .horizontal-scroll {
+      padding: 10px;
+  }
+
+  .horizontal-scroll .card {
+      flex: 0 0 220px; /* Reduced for smaller screens */
+  }
+
+  .card-body {
+      min-height: 160px; /* Slightly reduced for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .twelve-card-grid, .staggered-grid, .tile-layout {
+      grid-template-columns: 1fr;
+  }
+
+  .carousel-track .card {
+      flex: 0 0 180px;
+  }
+
+  .carousel-arrow {
+      width: 30px;
+      height: 30px;
+      font-size: 0.9rem;
+  }
+
+  .horizontal-scroll .card {
+      flex: 0 0 200px; /* Further reduced for very small screens */
+  }
+
+  .line-by-line .card-img-top {
+      height: 150px;
+  }
+
+  .card-body {
+      min-height: 140px; /* Further reduced for very small screens */
+  }
+}
+}

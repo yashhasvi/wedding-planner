@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinky Promise - Wedding Planner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rakkas&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Pinky Promise</div>
+        <ul class="nav-links">
+            <li><a href="pinkypromise.html" class="active">Home</a></li>
+            <li><a href="planner.html">Planner</a></li>
+            <li><a href="management.html">Management</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Vendor Category Buttons -->
+    <div class="button-scroll">
+        <div class="button-center">
+            <div class="button-row">
+                <button class="vendor-btn" onclick="showVendorSection('venuesSection')">Venues</button>
+                <button class="vendor-btn" onclick="showVendorSection('photographySection')">Photography</button>
+                <button class="vendor-btn" onclick="showVendorSection('cateringSection')">Catering</button>
+                <button class="vendor-btn" onclick="showVendorSection('makeupSection')">Makeup</button>
+                <button class="vendor-btn" onclick="showVendorSection('entertainmentSection')">Entertainment</button>
+                <button class="vendor-btn" onclick="showVendorSection('transportSection')">Transport</button>
+                <button class="vendor-btn" onclick="showVendorSection('invitationsSection')">Invitations</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vendor Sections -->
+    <div id="venuesSection" class="vendor-section">
+        <h2>Venues</h2>
+        <div class="card-container twelve-card-grid">
+            <div class="card">
+                <img src="./images/venues/v1.jpg" class="card-img-top" alt="Garden Haven">
+                <div class="card-body">
+                    <h5 class="card-title">Garden Haven</h5>
+                    <p class="card-text">Beautiful garden venue perfect for outdoor weddings.</p>
+                    <p class="card-price">Price: ₹2000</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Garden</li>
+                        <li class="list-group-item">Banquet Hall</li>
+                        <li class="list-group-item">Parking Available</li>
+                    </ul>
+                    <a href="add-to-cart.html?venue=1" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/venues/v2.jpg" class="card-img-top" alt="Grand Banquet">
+                <div class="card-body">
+                    <h5 class="card-title">Grand Banquet</h5>
+                    <p class="card-text">Spacious banquet hall for large gatherings.</p>
+                    <p class="card-price">Price: ₹3500</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Banquet Hall</li>
+                        <li class="list-group-item">Catering Services</li>
+                        <li class="list-group-item">Parking Available</li>
+                    </ul>
+                    <a href="add-to-cart.html?venue=2" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/venues/v3.jpg" class="card-img-top" alt="Luxury Pavilion">
+                <div class="card-body">
+                    <h5 class="card-title">Luxury Pavilion</h5>
+                    <p class="card-text">Luxury venue with modern amenities for weddings.</p>
+                    <p class="card-price">Price: ₹5000</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Indoor Hall</li>
+                        <li class="list-group-item">Catering Services</li>
+                        <li class="list-group-item">Valet Parking</li>
+                    </ul>
+                    <a href="add-to-cart.html?venue=3" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/venues/v4.jpg" class="card-img-top" alt="Elegant Manor">
+                <div class="card-body">
+                    <h5 class="card-title">Elegant Manor</h5>
+                    <p class="card-text">Charming indoor venue with elegant decor.</p>
+                    <p class="card-price">Price: ₹4000</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Indoor Hall</li>
+                        <li class="list-group-item">Decor Services</li>
+                        <li class="list-group-item">Parking Available</li>
+                    </ul>
+                    <a href="add-to-cart.html?venue=4" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/venues/v5.jpg" class="card-img-top" alt="Serenity Gardens">
+                <div class="card-body">
+                    <h5 class="card-title">Serenity Gardens</h5>
+                    <p class="card-text">Tranquil garden setting for intimate weddings.</p>
+                    <p class="card-price">Price: ₹2500</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Outdoor Garden</li>
+                        <li class="list-group-item">Pavilion</li>
+                        <li class="list-group-item">Parking Available</li>
+                    </ul>
+                    <a href="add-to-cart.html?venue=5" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/venues/v6.jpg" class="card-img-top" alt="Royal Palace">
+                <div class="card-body">
+                    <h5 class="card-title">Royal Palace</h5>
+                    <p class="card-text">Opulent venue with regal interiors.</p>
+                    <p class="card-price">Price: ₹6000</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Grand Hall</li>
+                        <li class="list-group-item">Catering Services</li>
+                        <li class="list-group-item">Valet Parking</li>
+                    </ul>
+                    <a href="add-to-cart.html?venue=6" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/venues/v7.jpg" class="card-img-top" alt="Ocean Breeze">
+                <div class="card-body">
+                    <h5 class="card-title">Ocean Breeze</h5>
+                    <p class="card-text">Beachside venue with stunning sea views.</p>
+                    <p class="card-price">Price: ₹4500</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Beach Access</li>
+                        <li class="list-group-item">Open Pavilion</li>
+                        <li class="list-group-item">Parking Available</li>
+                    </ul>
+                    <a href="add-to-cart.html?venue=7" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/venues/v8.jpg" class="card-img-top" alt="Heritage Hall">
+                <div class="card-body">
+                    <h5 class="card-title">Heritage Hall</h5>
+                    <p class="card-text">Historic venue with vintage charm.</p>
+                    <p class="card-price">Price: ₹3800</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Indoor Hall</li>
+                        <li class="list-group-item">Decor Services</li>
+                        <li class="list-group-item">Parking Available</li>
+                    </ul>
+                    <a href="add-to-cart.html?venue=8" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/venues/v9.jpg" class="card-img-top" alt="Crystal Ballroom">
+                <div class="card-body">
+                    <h5 class="card-title">Crystal Ballroom</h5>
+                    <p class="card-text">Elegant ballroom with chandeliers and luxury.</p>
+                    <p class="card-price">Price: ₹5500</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Ballroom</li>
+                        <li class="list-group-item">Catering Services</li>
+                        <li class="list-group-item">Valet Parking</li>
+                    </ul>
+                    <a href="add-to-cart.html?venue=9" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/venues/v10.jpg" class="card-img-top" alt="Rustic Retreat">
+                <div class="card-body">
+                    <h5 class="card-title">Rustic Retreat</h5>
+                    <p class="card-text">Cozy venue with rustic wooden interiors.</p>
+                    <p class="card-price">Price: ₹3200</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Indoor Hall</li>
+                        <li class="list-group-item">Outdoor Deck</li>
+                        <li class="list-group-item">Parking Available</li>
+                    </ul>
+                    <a href="add-to-cart.html?venue=10" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/venues/v11.jpg" class="card-img-top" alt="Starlight Terrace">
+                <div class="card-body">
+                    <h5 class="card-title">Starlight Terrace</h5>
+                    <p class="card-text">Rooftop venue with city skyline views.</p>
+                    <p class="card-price">Price: ₹4200</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Rooftop Terrace</li>
+                        <li class="list-group-item">Catering Services</li>
+                        <li class="list-group-item">Parking Available</li>
+                    </ul>
+                    <a href="add-to-cart.html?venue=11" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/venues/v12.jpg" class="card-img-top" alt="Vineyard Estate">
+                <div class="card-body">
+                    <h5 class="card-title">Vineyard Estate</h5>
+                    <p class="card-text">Picturesque venue surrounded by vineyards.</p>
+                    <p class="card-price">Price: ₹4800</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Outdoor Garden</li>
+                        <li class="list-group-item">Banquet Hall</li>
+                        <li class="list-group-item">Parking Available</li>
+                    </ul>
+                    <a href="add-to-cart.html?venue=12" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="photographySection" class="vendor-section">
+        <h2>Photography</h2>
+        <div class="card-container horizontal-scroll">
+            <div class="card">
+                <img src="./images/photography/p1.jpg" class="card-img-top" alt="Candid Snaps">
+                <div class="card-body">
+                    <h5 class="card-title">Candid Snaps</h5>
+                    <p class="card-text">Captures candid moments with a natural style.</p>
+                    <p class="card-price">Price: ₹1500</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Candid Photography</li>
+                        <li class="list-group-item">Full-Day Coverage</li>
+                        <li class="list-group-item">Edited Photos</li>
+                    </ul>
+                    <a href="add-to-cart.html?photo=1" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/photography/p2.jpg" class="card-img-top" alt="Cinematic Frames">
+                <div class="card-body">
+                    <h5 class="card-title">Cinematic Frames</h5>
+                    <p class="card-text">Specializes in cinematic wedding photography.</p>
+                    <p class="card-price">Price: ₹2500</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Cinematic Style</li>
+                        <li class="list-group-item">Drone Shots</li>
+                        <li class="list-group-item">Photo Album</li>
+                    </ul>
+                    <a href="add-to-cart.html?photo=2" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/photography/p3.jpg" class="card-img-top" alt="Classic Portraits">
+                <div class="card-body">
+                    <h5 class="card-title">Classic Portraits</h5>
+                    <p class="card-text">Expert in traditional wedding photography.</p>
+                    <p class="card-price">Price: ₹2000</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Traditional Style</li>
+                        <li class="list-group-item">Portrait Sessions</li>
+                        <li class="list-group-item">Digital Copies</li>
+                    </ul>
+                    <a href="add-to-cart.html?photo=3" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/photography/p4.jpg" class="card-img-top" alt="Artistic Visions">
+                <div class="card-body">
+                    <h5 class="card-title">Artistic Visions</h5>
+                    <p class="card-text">Creative photography with artistic flair.</p>
+                    <p class="card-price">Price: ₹1800</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Artistic Shots</li>
+                        <li class="list-group-item">Custom Edits</li>
+                        <li class="list-group-item">Digital Gallery</li>
+                    </ul>
+                    <a href="add-to-cart.html?photo=4" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/photography/p5.jpg" class="card-img-top" alt="Vintage Clicks">
+                <div class="card-body">
+                    <h5 class="card-title">Vintage Clicks</h5>
+                    <p class="card-text">Retro-style wedding photography.</p>
+                    <p class="card-price">Price: ₹2200</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Vintage Filters</li>
+                        <li class="list-group-item">Half-Day Coverage</li>
+                        <li class="list-group-item">Printed Photos</li>
+                    </ul>
+                    <a href="add-to-cart.html?photo=5" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/photography/p6.jpg" class="card-img-top" alt="Modern Moments">
+                <div class="card-body">
+                    <h5 class="card-title">Modern Moments</h5>
+                    <p class="card-text">Contemporary photography with vibrant colors.</p>
+                    <p class="card-price">Price: ₹2700</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Modern Style</li>
+                        <li class="list-group-item">Engagement Shoot</li>
+                        <li class="list-group-item">Online Gallery</li>
+                    </ul>
+                    <a href="add-to-cart.html?photo=6" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/photography/p7.jpg" class="card-img-top" alt="Golden Hour">
+                <div class="card-body">
+                    <h5 class="card-title">Golden Hour</h5>
+                    <p class="card-text">Specializes in sunset and golden hour shots.</p>
+                    <p class="card-price">Price: ₹1900</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Golden Hour Shots</li>
+                        <li class="list-group-item">Outdoor Sessions</li>
+                        <li class="list-group-item">Digital Copies</li>
+                    </ul>
+                    <a href="add-to-cart.html?photo=7" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/photography/p8.jpg" class="card-img-top" alt="Epic Stories">
+                <div class="card-body">
+                    <h5 class="card-title">Epic Stories</h5>
+                    <p class="card-text">Narrative-driven wedding photography.</p>
+                    <p class="card-price">Price: ₹3000</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Storytelling Focus</li>
+                        <li class="list-group-item">Full-Day Coverage</li>
+                        <li class="list-group-item">Photo Book</li>
+                    </ul>
+                    <a href="add-to-cart.html?photo=8" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cateringSection" class="vendor-section">
+        <h2>Catering</h2>
+        <div class="card-container line-by-line">
+            <div class="card">
+                <img src="./images/catering/c1.jpg" class="card-img-top" alt="Gourmet Delights">
+                <div class="card-body">
+                    <h5 class="card-title">Gourmet Delights</h5>
+                    <p class="card-text">Premium multi-cuisine catering service.</p>
+                    <p class="card-price">Price: ₹1200</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Multi-Cuisine Menu</li>
+                        <li class="list-group-item">Live Counters</li>
+                        <li class="list-group-item">Dessert Bar</li>
+                    </ul>
+                    <a href="add-to-cart.html?catering=1" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/catering/c2.jpg" class="card-img-top" alt="Traditional Feast">
+                <div class="card-body">
+                    <h5 class="card-title">Traditional Feast</h5>
+                    <p class="card-text">Authentic regional cuisine for weddings.</p>
+                    <p class="card-price">Price: ₹1000</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Regional Dishes</li>
+                        <li class="list-group-item">Buffet Service</li>
+                        <li class="list-group-item">Vegan Options</li>
+                    </ul>
+                    <a href="add-to-cart.html?catering=2" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/catering/c3.jpg" class="card-img-top" alt="Fusion Flavors">
+                <div class="card-body">
+                    <h5 class="card-title">Fusion Flavors</h5>
+                    <p class="card-text">Blend of global and local cuisines.</p>
+                    <p class="card-price">Price: ₹1500</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Fusion Menu</li>
+                        <li class="list-group-item">Cocktail Bar</li>
+                        <li class="list-group-item">Custom Desserts</li>
+                    </ul>
+                    <a href="add-to-cart.html?catering=3" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/catering/c4.jpg" class="card-img-top" alt="Veggie Bliss">
+                <div class="card-body">
+                    <h5 class="card-title">Veggie Bliss</h5>
+                    <p class="card-text">Vegetarian-only catering with diverse options.</p>
+                    <p class="card-price">Price: ₹900</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Vegetarian Menu</li>
+                        <li class="list-group-item">Live Cooking</li>
+                        <li class="list-group-item">Jain Options</li>
+                    </ul>
+                    <a href="add-to-cart.html?catering=4" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/catering/c5.jpg" class="card-img-top" alt="Royal Banquet">
+                <div class="card-body">
+                    <h5 class="card-title">Royal Banquet</h5>
+                    <p class="card-text">Luxury catering with premium ingredients.</p>
+                    <p class="card-price">Price: ₹2000</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Premium Menu</li>
+                        <li class="list-group-item">Plated Service</li>
+                        <li class="list-group-item">Wine Pairing</li>
+                    </ul>
+                    <a href="add-to-cart.html?catering=5" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/catering/c6.jpg" class="card-img-top" alt="Street Food Fiesta">
+                <div class="card-body">
+                    <h5 class="card-title">Street Food Fiesta</h5>
+                    <p class="card-text">Casual street food-inspired catering.</p>
+                    <p class="card-price">Price: ₹800</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Street Food Menu</li>
+                        <li class="list-group-item">Food Stalls</li>
+                        <li class="list-group-item">Quick Service</li>
+                    </ul>
+                    <a href="add-to-cart.html?catering=6" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/catering/c7.jpg" class="card-img-top" alt="Seafood Extravaganza">
+                <div class="card-body">
+                    <h5 class="card-title">Seafood Extravaganza</h5>
+                    <p class="card-text">Specializes in fresh seafood dishes.</p>
+                    <p class="card-price">Price: ₹1800</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Seafood Menu</li>
+                        <li class="list-group-item">Live Grill</li>
+                        <li class="list-group-item">Custom Sauces</li>
+                    </ul>
+                    <a href="add-to-cart.html?catering=7" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="makeupSection" class="vendor-section">
+        <h2>Makeup</h2>
+        <div class="card-container staggered-grid">
+            <div class="card">
+                <img src="./images/makeup/m1.jpg" class="card-img-top" alt="Glam Look">
+                <div class="card-body">
+                    <h5 class="card-title">Glam Look</h5>
+                    <p class="card-text">Bold and glamorous bridal makeup with HD finish.</p>
+                    <p class="card-price">Price: ₹1500</p>
+                    <a href="add-to-cart.html?makeup=1" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/makeup/m2.jpg" class="card-img-top" alt="Natural Glow">
+                <div class="card-body">
+                    <h5 class="card-title">Natural Glow</h5>
+                    <p class="card-text">Subtle, natural bridal makeup with a dewy finish.</p>
+                    <p class="card-price">Price: ₹1200</p>
+                    <a href="add-to-cart.html?makeup=2" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/makeup/m3.jpg" class="card-img-top" alt="Traditional Charm">
+                <div class="card-body">
+                    <h5 class="card-title">Traditional Charm</h5>
+                    <p class="card-text">Traditional bridal makeup with cultural elements.</p>
+                    <p class="card-price">Price: ₹1800</p>
+                    <a href="add-to-cart.html?makeup=3" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/makeup/m4.jpeg" class="card-img-top" alt="Matte Perfection">
+                <div class="card-body">
+                    <h5 class="card-title">Matte Perfection</h5>
+                    <p class="card-text">Matte finish bridal makeup for a polished look.</p>
+                    <p class="card-price">Price: ₹1600</p>
+                    <a href="add-to-cart.html?makeup=4" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/makeup/m5.jpeg" class="card-img-top" alt="Boho Beauty">
+                <div class="card-body">
+                    <h5 class="card-title">Boho Beauty</h5>
+                    <p class="card-text">Bohemian-inspired bridal makeup with earthy tones.</p>
+                    <p class="card-price">Price: ₹1400</p>
+                    <a href="add-to-cart.html?makeup=5" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/makeup/m6.jpeg" class="card-img-top" alt="Red Carpet">
+                <div class="card-body">
+                    <h5 class="card-title">Red Carpet</h5>
+                    <p class="card-text">Hollywood-style glamorous makeup with bold features.</p>
+                    <p class="card-price">Price: ₹2000</p>
+                    <a href="add-to-cart.html?makeup=6" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/makeup/m7.jpeg" class="card-img-top" alt="Soft Elegance">
+                <div class="card-body">
+                    <h5 class="card-title">Soft Elegance</h5>
+                    <p class="card-text">Delicate makeup for a timeless, soft look.</p>
+                    <p class="card-price">Price: ₹1300</p>
+                    <a href="add-to-cart.html?makeup=7" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/makeup/m8.jpeg" class="card-img-top" alt="Airbrush Art">
+                <div class="card-body">
+                    <h5 class="card-title">Airbrush Art</h5>
+                    <p class="card-text">Flawless airbrush makeup for long-lasting coverage.</p>
+                    <p class="card-price">Price: ₹1700</p>
+                    <a href="add-to-cart.html?makeup=8" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="entertainmentSection" class="vendor-section">
+        <h2>Entertainment</h2>
+        <div class="line-by-line">
+            <div class="card">
+                <img src="./images/entertainment/e1.jpeg" class="card-img-top" alt="Live Band">
+                <div class="card-body">
+                    <h5 class="card-title">Live Band</h5>
+                    <p class="card-text">Energetic live band for wedding receptions with pop and Bollywood hits.</p>
+                    <p class="card-price">Price: ₹5000</p>
+                    <a href="add-to-cart.html?entertainment=1" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/entertainment/e2.jpeg" class="card-img-top" alt="DJ Night">
+                <div class="card-body">
+                    <h5 class="card-title">DJ Night</h5>
+                    <p class="card-text">High-energy DJ with EDM and Bollywood tracks.</p>
+                    <p class="card-price">Price: ₹3000</p>
+                    <a href="add-to-cart.html?entertainment=2" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/entertainment/e3.jpeg" class="card-img-top" alt="Classical Ensemble">
+                <div class="card-body">
+                    <h5 class="card-title">Classical Ensemble</h5>
+                    <p class="card-text">Classical music with a string quartet for ceremonies.</p>
+                    <p class="card-price">Price: ₹3500</p>
+                    <a href="add-to-cart.html?entertainment=3" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/entertainment/e4.jpeg" class="card-img-top" alt="Dance Troupe">
+                <div class="card-body">
+                    <h5 class="card-title">Dance Troupe</h5>
+                    <p class="card-text">Traditional dance performance with cultural flair.</p>
+                    <p class="card-price">Price: ₹2500</p>
+                    <a href="add-to-cart.html?entertainment=4" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/entertainment/e5.jpeg" class="card-img-top" alt="Fire Show">
+                <div class="card-body">
+                    <h5 class="card-title">Fire Show</h5>
+                    <p class="card-text">Thrilling fire performance with safety measures.</p>
+                    <p class="card-price">Price: ₹4000</p>
+                    <a href="add-to-cart.html?entertainment=5" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/entertainment/e6.jpeg" class="card-img-top" alt="Magic Show">
+                <div class="card-body">
+                    <h5 class="card-title">Magic Show</h5>
+                    <p class="card-text">Interactive close-up magic for guests.</p>
+                    <p class="card-price">Price: ₹2000</p>
+                    <a href="add-to-cart.html?entertainment=6" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/entertainment/e7.jpeg" class="card-img-top" alt="Folk Music">
+                <div class="card-body">
+                    <h5 class="card-title">Folk Music</h5>
+                    <p class="card-text">Traditional folk music performance.</p>
+                    <p class="card-price">Price: ₹2800</p>
+                    <a href="add-to-cart.html?entertainment=7" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/entertainment/e8.jpeg" class="card-img-top" alt="Stand-Up Comedy">
+                <div class="card-body">
+                    <h5 class="card-title">Stand-Up Comedy</h5>
+                    <p class="card-text">Humorous stand-up routine for receptions.</p>
+                    <p class="card-price">Price: ₹2200</p>
+                    <a href="add-to-cart.html?entertainment=8" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="transportSection" class="vendor-section">
+        <h2>Transport</h2>
+        <div class="card-container tile-layout">
+            <div class="card">
+                <img src="./images/transport/t1.jpeg" class="card-img-top" alt="Vintage Car">
+                <div class="card-body">
+                    <h5 class="card-title">Vintage Car</h5>
+                    <p class="card-text">Classic car for a stylish bridal entry.</p>
+                    <p class="card-price">Price: ₹3000</p>
+                    <a href="add-to-cart.html?transport=1" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/transport/t2.jpeg" class="card-img-top" alt="Luxury Limousine">
+                <div class="card-body">
+                    <h5 class="card-title">Luxury Limousine</h5>
+                    <p class="card-text">Premium limousine for VIP transport.</p>
+                    <p class="card-price">Price: ₹5000</p>
+                    <a href="add-to-cart.html?transport=2" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/transport/t3.jpeg" class="card-img-top" alt="Horse Carriage">
+                <div class="card-body">
+                    <h5 class="card-title">Horse Carriage</h5>
+                    <p class="card-text">Romantic horse-drawn carriage for bridal entry.</p>
+                    <p class="card-price">Price: ₹3500</p>
+                    <a href="add-to-cart.html?transport=3" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/transport/t4.jpeg" class="card-img-top" alt="Luxury SUV">
+                <div class="card-body">
+                    <h5 class="card-title">Luxury SUV</h5>
+                    <p class="card-text">Spacious SUV for guest transport.</p>
+                    <p class="card-price">Price: ₹2500</p>
+                    <a href="add-to-cart.html?transport=4" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/transport/t5.jpeg" class="card-img-top" alt="Party Bus">
+                <div class="card-body">
+                    <h5 class="card-title">Party Bus</h5>
+                    <p class="card-text">Fun bus with music for group transport.</p>
+                    <p class="card-price">Price: ₹4000</p>
+                    <a href="add-to-cart.html?transport=5" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/transport/t6.jpeg" class="card-img-top" alt="Convertible Car">
+                <div class="card-body">
+                    <h5 class="card-title">Convertible Car</h5>
+                    <p class="card-text">Stylish convertible for couple’s exit.</p>
+                    <p class="card-price">Price: ₹3200</p>
+                    <a href="add-to-cart.html?transport=6" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/transport/t7.jpeg" class="card-img-top" alt="Mini Van">
+                <div class="card-body">
+                    <h5 class="card-title">Mini Van</h5>
+                    <p class="card-text">Comfortable van for guest transport.</p>
+                    <p class="card-price">Price: ₹2000</p>
+                    <a href="add-to-cart.html?transport=7" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="./images/transport/t8.jpeg" class="card-img-top" alt="Electric Car">
+                <div class="card-body">
+                    <h5 class="card-title">Electric Car</h5>
+                    <p class="card-text">Eco-friendly car for couple’s entry.</p>
+                    <p class="card-price">Price: ₹2800</p>
+                    <a href="add-to-cart.html?transport=8" class="card-link">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="invitationsSection" class="vendor-section">
+        <h2>Invitations</h2>
+        <div class="card-container carousel-container">
+            <button class="carousel-arrow carousel-prev">&#10094;</button>
+            <div class="carousel-track">
+                <div class="card">
+                    <img src="./images/invitations/i1.jpg" class="card-img-top" alt="Classic Invite">
+                    <div class="card-body">
+                        <h5 class="card-title">Classic Invite</h5>
+                        <p class="card-text">Elegant paper invitations with custom text.</p>
+                        <p class="card-price">Price: ₹200</p>
+                        <a href="add-to-cart.html?invitation=1" class="card-link">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./images/invitations/i2.jpg" class="card-img-top" alt="Digital Invite">
+                    <div class="card-body">
+                        <h5 class="card-title">Digital Invite</h5>
+                        <p class="card-text">Modern digital invitations with animated designs.</p>
+                        <p class="card-price">Price: ₹150</p>
+                        <a href="add-to-cart.html?invitation=2" class="card-link">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./images/invitations/i3.jpg" class="card-img-top" alt="Floral Invite">
+                    <div class="card-body">
+                        <h5 class="card-title">Floral Invite</h5>
+                        <p class="card-text">Floral-themed paper invitations with envelopes.</p>
+                        <p class="card-price">Price: ₹250</p>
+                        <a href="add-to-cart.html?invitation=3" class="card-link">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./images/invitations/i4.jpg" class="card-img-top" alt="Luxury Invite">
+                    <div class="card-body">
+                        <h5 class="card-title">Luxury Invite</h5>
+                        <p class="card-text">Premium invitations with gold foil and luxury envelopes.</p>
+                        <p class="card-price">Price: ₹300</p>
+                        <a href="add-to-cart.html?invitation=4" class="card-link">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./images/invitations/i5.jpg" class="card-img-top" alt="Rustic Invite">
+                    <div class="card-body">
+                        <h5 class="card-title">Rustic Invite</h5>
+                        <p class="card-text">Rustic-themed paper invitations with custom text.</p>
+                        <p class="card-price">Price: ₹220</p>
+                        <a href="add-to-cart.html?invitation=5" class="card-link">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./images/invitations/i6.jpg" class="card-img-top" alt="Modern Invite">
+                    <div class="card-body">
+                        <h5 class="card-title">Modern Invite</h5>
+                        <p class="card-text">Sleek digital invitations with interactive links.</p>
+                        <p class="card-price">Price: ₹180</p>
+                        <a href="add-to-cart.html?invitation=6" class="card-link">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./images/invitations/i7.jpg" class="card-img-top" alt="Vintage Invite">
+                    <div class="card-body">
+                        <h5 class="card-title">Vintage Invite</h5>
+                        <p class="card-text">Retro-style paper invitations with ornate designs.</p>
+                        <p class="card-price">Price: ₹240</p>
+                        <a href="add-to-cart.html?invitation=7" class="card-link">Add to Cart</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./images/invitations/i8.jpg" class="card-img-top" alt="Eco Invite">
+                    <div class="card-body">
+                        <h5 class="card-title">Eco Invite</h5>
+                        <p class="card-text">Eco-friendly paper invitations with seed paper.</p>
+                        <p class="card-price">Price: ₹270</p>
+                        <a href="add-to-cart.html?invitation=8" class="card-link">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-arrow carousel-next">&#10095;</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
